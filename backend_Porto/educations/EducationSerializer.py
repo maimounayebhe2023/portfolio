@@ -5,4 +5,4 @@ class EducationSerializer(ModelSerializer):
 
     class meta:
         model=Educations
-        fields='__all__'
+        fields='__All__'
