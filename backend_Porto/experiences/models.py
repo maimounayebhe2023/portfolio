@@ -8,7 +8,7 @@ class WorkExperience(models.Model):
     job_title=models.CharField(max_length=50)
     company_name=models.CharField(max_length=50)
     location=models.CharField(max_length=50)
-    start_date=models.DateField
+    start_date=models.DateField()
     end_date=models.DateField(blank=True, null=True)
     is_current=models.BooleanField(default=False)
     description=models.TextField

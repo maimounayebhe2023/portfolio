@@ -1,7 +1,9 @@
-from rest_framework.serializers import ModelSerializer
-from models import PersonalInfo
+from rest_framework import serializers
+from .models import PersonalInfo
 
-class PersonalInfoSerializer(ModelSerializer):
-    class meta:
+class PersonalInfoSerializer(serializers.ModelSerializer):
+    # Display the portfolio URL instead of its ID
+    portfolio = serializers.CharField(source='portfolio.access_url', read_only=True)
+    class Meta:
         model=PersonalInfo
-        fields="__All__"
+        fields='__all__'

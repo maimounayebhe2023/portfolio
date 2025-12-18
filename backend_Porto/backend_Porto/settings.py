@@ -56,7 +56,7 @@ INSTALLED_APPS = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',)
 }
-SIMPLE_JWT = { "ACCESS_TOKEN_LIFETIME": timedelta(minutes=30), "REFRESH_TOKEN_LIFETIME": timedelta(days=1), }
+SIMPLE_JWT = { "ACCESS_TOKEN_LIFETIME": timedelta(minutes=1), "REFRESH_TOKEN_LIFETIME": timedelta(days=1), }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

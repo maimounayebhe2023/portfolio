@@ -1,8 +1,9 @@
-from rest_framework.serializers import ModelSerializer
-from models import Language
+from rest_framework import serializers
+from .models import Language
 
-class LanguageSerializer(ModelSerializer):
-
-    class meta:
+class LanguageSerializer(serializers.ModelSerializer):
+    # Display the portfolio URL instead of its ID
+    portfolio = serializers.CharField(source='portfolio.access_url', read_only=True)
+    class Meta:
         model=Language
-        fields="__All__"
+        fields='__all__'

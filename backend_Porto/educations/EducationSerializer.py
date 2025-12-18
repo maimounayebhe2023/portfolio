@@ -1,8 +1,10 @@
-from rest_framework.serializers import ModelSerializer
-from models import Educations
+from rest_framework import serializers
+from .models import Education
 
-class EducationSerializer(ModelSerializer):
+class EducationSerializer(serializers.ModelSerializer):
+     # Display the portfolio URL instead of its ID
+    portfolio = serializers.CharField(source='portfolio.access_url', read_only=True)
 
-    class meta:
-        model=Educations
-        fields='__All__'
+    class Meta:
+        model=Education
+        fields='__all__'

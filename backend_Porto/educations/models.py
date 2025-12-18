@@ -2,7 +2,7 @@ from django.db import models
 from portfolio.models import Portfolio
 #create here your models
 
-class Educations(models.Model):
+class Education(models.Model):
     portfolio=models.ForeignKey(Portfolio, on_delete=models.CASCADE)
     institution=models.CharField(max_length=50)
     degree=models.CharField(max_length=50)

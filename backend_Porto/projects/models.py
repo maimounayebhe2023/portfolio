@@ -8,12 +8,15 @@ class Projet(models.Model):
     image = models.ImageField(upload_to='projets/', null=True, blank=True)  
     lien = models.URLField(max_length=500, null=True, blank=True)  
     technologies = models.CharField(max_length=255)
-    start_date=models.DateField
+    start_date=models.DateField()
     end_date = models.DateField(null=True, blank=True)
     statut = models.CharField(
         max_length=50,
-        choices=[('en_cours', 'En cours'), ('termine', 'Terminé')],
-        default='en_cours'
+        choices=[
+        ('in_progress', 'In progress'),
+        ('completed', 'Completed')
+    ],
+    default='in_progress'
     )
 
     def __str__(self):
