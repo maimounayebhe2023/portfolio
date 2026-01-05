@@ -3,17 +3,13 @@ users/urls.py
 
 This module defines the URL routing for the User API endpoints using Django REST Framework.
 
-It uses a DefaultRouter to automatically generate standard RESTful routes (list, create, update,  delete) for the UserViewSet.
-
+It maps HTTP methods (GET, POST, etc.) to the corresponding methods of UserListCreateAPIView
+for listing and creating users.
 """
 
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import UserViewSet
-
-router = DefaultRouter()
-router.register(r'users', UserViewSet, basename='user')
+from django.urls import path
+from .views import UserListCreateAPIView
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('users/', UserListCreateAPIView.as_view(), name='user-list-create'),
 ]
