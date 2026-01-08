@@ -19,7 +19,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'portfolio-bet9.onrender.com']
 
 
 
@@ -34,8 +33,7 @@ SECRET_KEY = 'django-insecure-8xv8*17n5$!9oaja@4#i=qpfr_8v=ib8b$35^$)0$1&z@7arw!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
