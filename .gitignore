@@ -1,1 +1,4 @@
-#User.objects.create_user(username='test', email='test@example.com', password='Test@2025')
+/staticfiles/
+*.pyc
+__pycache__/
+db.sqlite3
